@@ -69,3 +69,4 @@ for i = totalImagenes:-1:1
 end
 
 examGUI2();
+examenCompression();

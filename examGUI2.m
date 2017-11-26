@@ -22,7 +22,7 @@ function varargout = examGUI2(varargin)
 
 % Edit the above text to modify the response to help examGUI
 
-% Last Modified by GUIDE v2.5 25-Nov-2017 16:10:40
+% Last Modified by GUIDE v2.5 25-Nov-2017 21:55:11
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -91,6 +91,7 @@ nombreImagenes = evalin('base','nombreImagenes');
 
 index = get(handles.listbox1,'value');
 assignin('base', 'selectedIndex', index);
+
 
 estudioMRI = evalin('base','estudioMRI');
 estudioIamp = evalin('base','estudioIamp');
@@ -177,11 +178,27 @@ end
 
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
-
-%IfaseVI=((imag.*BW)+pi)*180/pi;
-%f, imshow(IfaseVI,[]), colormap(jet), colorbar;
+ 
 
 
-% hObject    handle to pushbutton1 (see GCBO)
+
+function ncols_Callback(hObject, eventdata, handles)
+% hObject    handle to ncols (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of ncols as text
+%        str2double(get(hObject,'String')) returns contents of ncols as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function ncols_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to ncols (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
