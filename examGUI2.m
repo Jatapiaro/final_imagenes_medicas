@@ -104,11 +104,11 @@ estudioIfaseBW = evalin('base','estudioIfaseBW');
 IfaseBW = estudioIfaseBW(:,:,index);
 
 axes(handles.axes1);
-imshow(Iamp, []), colormap(jet);
+imshow(Iamp, []), colormap(handles.axes1, jet);
 set(handles.text2, 'String', strcat('Iamp ','  ',nombreImagenes(index)));
 
 axes(handles.axes3);
-imshow(Ifase, []), colormap(jet);
+imshow(Ifase, []), colormap(handles.axes3, jet);
 set(handles.text3, 'String', strcat('Ifase', '   ' ,nombreImagenes(index)));
 
 axes(handles.axes4);
@@ -141,12 +141,12 @@ end
 
 IfaseVI=((int16(Ifase).*int16(polyH))+pi)*180/pi;
 axes(handles.axes7);
-imshow(IfaseVI,[]), colormap(jet), colorbar;
+imshow(IfaseVI,[]), colormap(handles.axes7,jet), colorbar;
 set(handles.text5, 'String', strcat('Ventriculo A', '   ' ,nombreImagenes(index)));
 
 IfaseVI2=((int16(Ifase).*int16(polyR))+pi)*180/pi;
 axes(handles.axes6);
-imshow(IfaseVI2,[]), colormap(jet), colorbar;
+imshow(IfaseVI2,[]), colormap(handles.axes6,jet), colorbar;
 set(handles.text6, 'String', strcat('Ventriculo B', '   ' ,nombreImagenes(index)));
 
 
